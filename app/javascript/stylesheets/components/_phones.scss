@@ -1,0 +1,16 @@
+@layer components {
+  .phone {
+    position: absolute;
+    width: calc(428px / 1.5);
+    height: calc(926px / 1.5);
+    border: 2px solid #fff;
+    border-radius: 24px;
+    @apply bg-sky-200;
+    background-size: cover;
+    box-shadow: -40px 80px 40px rgba(0,0,0,0.1);
+
+    > img {
+      border-radius: 24px;
+    }
+  }
+}

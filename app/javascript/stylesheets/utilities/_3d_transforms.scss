@@ -1,0 +1,16 @@
+@layer utilities {
+  .transform3d {
+    --tw-rotate-x: 0;
+    --tw-rotate-y: 0;
+    --tw-rotate-z: 0;
+    transform: rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z));
+  }
+
+  .rotate-x-60 {
+    --tw-rotate-x: 60deg;
+  }
+
+  .-rotate-z-45 {
+    --tw-rotate-z: -45deg;
+  }
+}

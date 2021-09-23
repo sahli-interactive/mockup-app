@@ -1,2 +1,19 @@
 <%- provide(:title, 'Home') -%>
-<p>Find me in app/views/home/index.html.haml</p>
+<div class="p-8">
+  <h1 class="text-2xl mb-4">Mockup App</h1>
+  <%= form_tag do %>
+    <%= file_field_tag 'screen-upload-1', id: 'js-screen-upload-1', class: 'js-screen-upload' %>
+    <%= file_field_tag 'screen-upload-2', id: 'js-screen-upload-2',class: 'js-screen-upload' %>
+    <%= file_field_tag 'screen-upload-3', id: 'js-screen-upload-3',class: 'js-screen-upload' %>
+  <% end %>
+</div>
+<div class="w-full h-2000 bg-gray-100">
+  <div class="transform3d rotate-x-60 -rotate-z-45">
+    <div class="phone left-80">
+      <%= image_tag 'transparent.png', id:'js-screen-img-1', class: 'js-screen-img object-cover w-full h-full' %>
+    </div>
+    <div class="phone">
+      <%= image_tag 'transparent.png', id: 'js-screen-img-0', class: 'js-screen-img object-cover w-full h-full' %>
+    </div>
+  </div>
+</div>
