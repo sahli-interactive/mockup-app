@@ -1,19 +1,31 @@
 <%- provide(:title, 'Home') -%>
 <div class="p-8">
   <h1 class="text-2xl mb-4">Mockup App</h1>
-  <%= form_tag do %>
-    <%= file_field_tag 'screen-upload-1', id: 'js-screen-upload-1', class: 'js-screen-upload' %>
-    <%= file_field_tag 'screen-upload-2', id: 'js-screen-upload-2',class: 'js-screen-upload' %>
-    <%= file_field_tag 'screen-upload-3', id: 'js-screen-upload-3',class: 'js-screen-upload' %>
-  <% end %>
+  <div class="flex">
+    <%= form_tag do %>
+      <%= file_field_tag 'screen-upload-1', class: 'js-screen-upload', 'up-data': '#js-screen-img-1'.to_json %>
+      <%= file_field_tag 'screen-upload-2', class: 'js-screen-upload', 'up-data': '#js-screen-img-2'.to_json %>
+      <%= file_field_tag 'screen-upload-3', class: 'js-screen-upload', 'up-data': '#js-screen-img-3'.to_json %>
+      <%= file_field_tag 'screen-upload-3', class: 'js-screen-upload', 'up-data': '#js-screen-img-4'.to_json %>
+    <% end %>
+    <%= button_tag 'Download', type: 'button', id: 'js-download', class: 'px-4 py-2 rounded bg-sky-700 text-white' %>
+  </div>
 </div>
-<div class="w-full h-2000 bg-gray-100">
-  <div class="transform3d rotate-x-60 -rotate-z-45">
-    <div class="phone left-80">
-      <%= image_tag 'transparent.png', id:'js-screen-img-1', class: 'js-screen-img object-cover w-full h-full' %>
-    </div>
-    <div class="phone">
-      <%= image_tag 'transparent.png', id: 'js-screen-img-0', class: 'js-screen-img object-cover w-full h-full' %>
+<div class="w-full p-20 bg-gray-100">
+  <div id="mockup">
+    <div class="flex flex-row-reverse transform3d rotate-x-60 -rotate-z-45 preserve-3d perspective-10">
+      <div class="phone mx-4 origin-bottom transform3d">
+        <%= image_tag 'transparent.png', id:'js-screen-img-4', class: 'js-screen-img object-cover w-full h-full' %>
+      </div>
+      <div class="phone mx-4 origin-bottom transform3d">
+        <%= image_tag 'transparent.png', id:'js-screen-img-3', class: 'js-screen-img object-cover w-full h-full' %>
+      </div>
+      <div class="phone mx-4 origin-bottom transform3d">
+        <%= image_tag 'transparent.png', id:'js-screen-img-2', class: 'js-screen-img object-cover w-full h-full' %>
+      </div>
+      <div class="phone mx-4">
+        <%= image_tag 'transparent.png', id: 'js-screen-img-1', class: 'js-screen-img object-cover w-full h-full' %>
+      </div>
     </div>
   </div>
 </div>

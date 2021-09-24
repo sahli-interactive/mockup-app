@@ -6,11 +6,35 @@
     transform: rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z));
   }
 
+  .-rotate-x-30 {
+    --tw-rotate-x: -30deg;
+  }
+
   .rotate-x-60 {
     --tw-rotate-x: 60deg;
   }
 
+  .-rotate-x-60 {
+    --tw-rotate-x: -60deg;
+  }
+
+  .rotate-x-90 {
+    --tw-rotate-x: 90deg;
+  }
+
+  .-rotate-x-90 {
+    --tw-rotate-x: -90deg;
+  }
+
   .-rotate-z-45 {
     --tw-rotate-z: -45deg;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .perspective-10 {
+    perspective: 1000px;
   }
 }
