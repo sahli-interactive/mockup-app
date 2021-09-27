@@ -6,28 +6,44 @@
     transform: rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z));
   }
 
+  // Negative values
+
+  .-rotate-x-25 {
+    --tw-rotate-x: -25deg;
+  }
+
   .-rotate-x-30 {
     --tw-rotate-x: -30deg;
   }
 
-  .rotate-x-60 {
-    --tw-rotate-x: 60deg;
+  .-rotate-z-45 {
+    --tw-rotate-z: -45deg;
+  }
+
+  .-rotate-x-50 {
+    --tw-rotate-x: -50deg;
   }
 
   .-rotate-x-60 {
     --tw-rotate-x: -60deg;
   }
 
-  .rotate-x-90 {
-    --tw-rotate-x: 90deg;
+  .-rotate-x-75 {
+    --tw-rotate-x: -75deg;
   }
 
   .-rotate-x-90 {
     --tw-rotate-x: -90deg;
   }
 
-  .-rotate-z-45 {
-    --tw-rotate-z: -45deg;
+  // Positive values
+
+  .rotate-x-60 {
+    --tw-rotate-x: 60deg;
+  }
+
+  .rotate-x-90 {
+    --tw-rotate-x: 90deg;
   }
 
   .preserve-3d {

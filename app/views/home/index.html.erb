@@ -1,30 +1,38 @@
 <%- provide(:title, 'Home') -%>
 <div class="p-8">
   <h1 class="text-2xl mb-4">Mockup App</h1>
-  <div class="flex">
+  <div class="flex items-end">
     <%= form_tag do %>
-      <%= file_field_tag 'screen-upload-1', class: 'js-screen-upload', 'up-data': '#js-screen-img-1'.to_json %>
-      <%= file_field_tag 'screen-upload-2', class: 'js-screen-upload', 'up-data': '#js-screen-img-2'.to_json %>
-      <%= file_field_tag 'screen-upload-3', class: 'js-screen-upload', 'up-data': '#js-screen-img-3'.to_json %>
-      <%= file_field_tag 'screen-upload-3', class: 'js-screen-upload', 'up-data': '#js-screen-img-4'.to_json %>
+      <div class="flex flex-col gap-2">
+        <%= file_field_tag 'screen-upload-1', accept: 'image/png,image/jpeg', class: 'js-screen-upload', 'up-data': '#js-screen-img-1'.to_json %>
+        <%= file_field_tag 'screen-upload-2', accept: 'image/png,image/jpeg', class: 'js-screen-upload', 'up-data': '#js-screen-img-2'.to_json %>
+        <%= file_field_tag 'screen-upload-3', accept: 'image/png,image/jpeg', class: 'js-screen-upload', 'up-data': '#js-screen-img-3'.to_json %>
+        <%= file_field_tag 'screen-upload-4', accept: 'image/png,image/jpeg', class: 'js-screen-upload', 'up-data': '#js-screen-img-4'.to_json %>
+      </div>
     <% end %>
-    <%= button_tag 'Download', type: 'button', id: 'js-download', class: 'px-4 py-2 rounded bg-sky-700 text-white' %>
+    <%= button_tag 'Download', type: 'button', id: 'js-download', class: 'ml-auto px-6 py-3 rounded bg-sky-700 text-white' %>
   </div>
 </div>
-<div class="w-full p-20 bg-gray-100">
-  <div id="mockup">
-    <div class="flex flex-row-reverse transform3d rotate-x-60 -rotate-z-45 preserve-3d perspective-10">
-      <div class="phone mx-4 origin-bottom transform3d">
-        <%= image_tag 'transparent.png', id:'js-screen-img-4', class: 'js-screen-img object-cover w-full h-full' %>
-      </div>
-      <div class="phone mx-4 origin-bottom transform3d">
-        <%= image_tag 'transparent.png', id:'js-screen-img-3', class: 'js-screen-img object-cover w-full h-full' %>
-      </div>
-      <div class="phone mx-4 origin-bottom transform3d">
-        <%= image_tag 'transparent.png', id:'js-screen-img-2', class: 'js-screen-img object-cover w-full h-full' %>
-      </div>
-      <div class="phone mx-4">
-        <%= image_tag 'transparent.png', id: 'js-screen-img-1', class: 'js-screen-img object-cover w-full h-full' %>
+<div class="bg-gray-100">
+  <div id="js-mockup-wrapper" class="relative w-full h-400 p-20">
+    <div id="mockup" class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-50">
+      <div class="plane-isometric">
+        <div class="phone mx-8 origin-bottom">
+          <div class="box-shadow"></div>
+          <%= image_tag 'transparent.png', id:'js-screen-img-1', class: 'js-screen-img object-cover w-full h-full border-2 border-white rounded-3xl bg-sky-200' %>
+        </div>
+        <div class="phone mx-8 origin-bottom transform3d -rotate-x-25 preserve-3d">
+          <div class="box-shadow"></div>
+          <%= image_tag 'transparent.png', id:'js-screen-img-2', class: 'js-screen-img object-cover w-full h-full border-2 border-white rounded-3xl bg-sky-200' %>
+        </div>
+        <div class="phone mx-8 origin-bottom transform3d -rotate-x-50 preserve-3d">
+          <div class="box-shadow"></div>
+          <%= image_tag 'transparent.png', id:'js-screen-img-3', class: 'js-screen-img object-cover w-full h-full border-2 border-white rounded-3xl bg-sky-200' %>
+        </div>
+        <div class="phone mx-8 origin-bottom transform3d -rotate-x-75 preserve-3d">
+          <div class="box-shadow"></div>
+          <%= image_tag 'transparent.png', id: 'js-screen-img-4', class: 'js-screen-img object-cover w-full h-full border-2 border-white rounded-3xl bg-sky-200' %>
+        </div>
       </div>
     </div>
   </div>

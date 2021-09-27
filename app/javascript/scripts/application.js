@@ -1,7 +1,7 @@
 import 'unpoly'
-import { saveAs } from 'file-saver'
-import * as htmlToImage from 'html-to-image';
-import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
+import saveAs from 'file-saver'
+import * as htmlToImage from 'html-to-image'
+import toPng from 'html-to-image'
 
 up.compiler('.js-screen-upload', (element, screenId) => {
   const upload = element
@@ -27,21 +27,22 @@ up.compiler('.js-screen-upload', (element, screenId) => {
   }
 
   return () => {
-    element.removeEventListener('change')
+    upload.removeEventListener('change')
   }
 })
 
 up.compiler('#js-download', (element) => {
-  const FileSaver = require('file-saver');
+  const FileSaver = require('file-saver')
   const downloadButton = element
-  const mockup = document.querySelector('#mockup')
+  const wrapper = document.querySelector('#js-mockup-wrapper')
 
   downloadButton.addEventListener('click', event => {
-    htmlToImage.toPng(mockup, {height: 2000}).then(function (dataUrl) {
-      FileSaver.saveAs(dataUrl)
+    htmlToImage.toPng(wrapper).then(function(dataUrl) {
+      FileSaver.saveAs(dataUrl, 'mockup')
+    })
   })
-  .catch(function (error) {
-    console.error('oops, something went wrong!', error);
-  });
-  })
+
+  return () => {
+    downloadButton.removeEventListener('click')
+  }
 })
